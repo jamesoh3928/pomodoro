@@ -1,13 +1,26 @@
 <!DOCYPE html>
 <html>
+
 <head>
-	<meta charset="UTF=8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Toogle</title>
-	<link rel="stylesheet">
+    <meta charset="UTF=8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
+
 <body>
-	<h1>Pomodro Timer</h1>
+    <h1>Pomodro Timer</h1>
+
+    <p id="date"></p>
+    <div id="clock">
+        <p class="unit" id="hours"></p>
+        <p class="unit" id="minutes"></p>
+        <p class="unit" id="seconds"></p>
+        <p class="unit" id="ampm"></p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
 </body>
+
 </html>
