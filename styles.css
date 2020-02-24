@@ -16,19 +16,6 @@ body {
     padding: 0.5em;
     text-align: center;
 }
-#clock {
-    align-items: center;
-    -webkit-align-items: center;
-    display: flex;
-    display: -webkit-flex;
-    height: 130px;
-    justify-content: space-around;
-    -webkit-justify-content: space-around;
-    left: calc(50% - 300px);
-    position: absolute;
-    top: calc(50% - 65px);
-    width: 600px;
-}
 .unit {
     background: linear-gradient(#aaa, #777);
     border-radius: 15px;
@@ -44,7 +31,14 @@ body {
     width: 23%;
 }
 #controls {
-	margin-top: 400px;
+	margin-top: 0px;
     font-size: 100px;
     text-align: center;
+}
+#clock {
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 8em;
+  letter-spacing: 5px;
+  text-align: center;
 }
