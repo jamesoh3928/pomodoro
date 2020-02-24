@@ -37,7 +37,7 @@ timerId = null;
 // Create the stopwatch
 function stopwatch(command) {
     var hours = 0,
-        minutes = 0,
+        minutes = 25,
         seconds = 0,
         display;
 
@@ -52,15 +52,15 @@ function stopwatch(command) {
 
     if (command === 'start') {
         timerId = setInterval(function() {
-            seconds++;
-            if (seconds === 60) {
-                seconds = 0;
-                minutes++;
+            seconds--;
+            if (seconds === -1) {
+                seconds = 59;
+                minutes--;
             }
 
-            if (minutes === 60) {
-                minutes = 0;
-                hours++;
+            if (minutes === -1) {
+                minutes = 59;
+                hours--;
             }
 
             display =
