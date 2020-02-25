@@ -37,8 +37,8 @@ timerId = null;
 // Create the stopwatch
 function stopwatch(command) {
     var hours = 0,
-        minutes = 25,
-        seconds = 0,
+        minutes = 0,
+        seconds = 10,
         display;
 
     function makeTwoDigits(number) {
@@ -67,6 +67,10 @@ function stopwatch(command) {
                 makeTwoDigits(hours) + ':' + makeTwoDigits(minutes) + ':' + makeTwoDigits(seconds);
             clock.innerHTML = display;
             console.log(display);
+			if (seconds == minutes == hours == 0){
+				alert("Time ended!");
+				clearInterval(timerId); // stop the timer
+			}
         }, 1000);
     } else if (command === 'stop') {
         clearInterval(timerId);
