@@ -41,6 +41,7 @@ function stopwatch(command) {
         seconds = 10,
         display;
 
+	var rest = false;
     function makeTwoDigits(number) {
         // display double digits for numbers less than 10
         if (number < 10) {
@@ -70,6 +71,15 @@ function stopwatch(command) {
 			if (seconds == minutes == hours == 0){
 				alert("Time ended!");
 				clearInterval(timerId); // stop the timer
+				
+				if (rest){
+					minutes = 5;
+					x = 25;
+				}
+				else{
+					minutes = 25;
+					x = 5;
+				}
 			}
         }, 1000);
     } else if (command === 'stop') {
