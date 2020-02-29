@@ -36,6 +36,7 @@ stop.addEventListener('click', function() {
 timerId = null;
 
 rest = false;
+count = 0;
 // Create the stopwatch
 function stopwatch(command) {
     var hours = 0,
@@ -43,7 +44,10 @@ function stopwatch(command) {
         seconds = 0,
         display;
 
-    if (rest) {
+	if (rest && count % 4 == 0){
+		minutes = 30;
+	}
+	else if (rest) {
         minutes = 5;
     } else {
         minutes = 25;
@@ -80,6 +84,7 @@ function stopwatch(command) {
                 alert('Time ended!');
                 clearInterval(timerId); // stop the timer
 				rest = !rest;
+				count++;
             }
         }, 1000);
     } else if (command === 'stop') {

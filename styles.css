@@ -42,3 +42,13 @@ body {
   letter-spacing: 5px;
   text-align: center;
 }
+textarea {
+    width: 550px;
+    height: 156px;
+    border: 0;
+    padding: 14px 19px 0;
+    resize: none;
+    line-height: 22px;
+    font-size: 12px;
+    background: radial-gradient(#eee, #668);
+}
