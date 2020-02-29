@@ -21,6 +21,7 @@ var start, stop, clock;
 start = document.getElementById('start');
 stop = document.getElementById('stop');
 clock = document.getElementById('clock');
+tab = document.getElementById('tab');
 
 // Add event listeners to both buttons
 start.addEventListener('click', function() {
@@ -34,15 +35,21 @@ stop.addEventListener('click', function() {
 // Define a timer ID for the setInterval function
 timerId = null;
 
+rest = false;
 // Create the stopwatch
 function stopwatch(command) {
     var hours = 0,
         minutes = 0,
-        seconds = 10,
+        seconds = 0,
         display;
 
-	var rest = false;
-    function makeTwoDigits(number) {
+    if (rest) {
+        minutes = 5;
+    } else {
+        minutes = 25;
+    }
+
+	function makeTwoDigits(number) {
         // display double digits for numbers less than 10
         if (number < 10) {
             return '0' + number;
@@ -67,20 +74,13 @@ function stopwatch(command) {
             display =
                 makeTwoDigits(hours) + ':' + makeTwoDigits(minutes) + ':' + makeTwoDigits(seconds);
             clock.innerHTML = display;
+			tab.innerHTML = display;
             console.log(display);
-			if (seconds == minutes == hours == 0){
-				alert("Time ended!");
-				clearInterval(timerId); // stop the timer
-				
-				if (rest){
-					minutes = 5;
-					x = 25;
-				}
-				else{
-					minutes = 25;
-					x = 5;
-				}
-			}
+            if (seconds ==0 &&  minutes == 0 && hours == 0) {
+                alert('Time ended!');
+                clearInterval(timerId); // stop the timer
+				rest = !rest;
+            }
         }, 1000);
     } else if (command === 'stop') {
         clearInterval(timerId);
