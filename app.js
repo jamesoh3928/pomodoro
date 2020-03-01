@@ -22,6 +22,7 @@ start = document.getElementById('start');
 stop = document.getElementById('stop');
 clock = document.getElementById('clock');
 tab = document.getElementById('tab');
+completed = document.getElementById('completed');
 
 // Add event listeners to both buttons
 start.addEventListener('click', function() {
@@ -42,7 +43,8 @@ function stopwatch(command) {
     var hours = 0,
         minutes = 0,
         seconds = 0,
-        display;
+        display,
+	    completedTime;
 
 	if (rest && count % 4 == 0){
 		minutes = 30;
@@ -50,7 +52,8 @@ function stopwatch(command) {
 	else if (rest) {
         minutes = 5;
     } else {
-        minutes = 25;
+        minutes = 0;
+		seconds = 10;
     }
 
 	function makeTwoDigits(number) {
@@ -81,10 +84,14 @@ function stopwatch(command) {
 			tab.innerHTML = display;
             console.log(display);
             if (seconds ==0 &&  minutes == 0 && hours == 0) {
-                alert('Time ended!');
-                clearInterval(timerId); // stop the timer
-				rest = !rest;
 				count++;
+				if (!rest){
+					completedTime = 'Completed Time: ' + count * 25 + ' minutes';
+					completed.innerHTML = completedTime;
+				}
+                alert('Time ended!');
+				rest = !rest;
+                clearInterval(timerId); // stop the timer
             }
         }, 1000);
     } else if (command === 'stop') {

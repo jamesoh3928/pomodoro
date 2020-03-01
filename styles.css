@@ -16,6 +16,14 @@ body {
     padding: 0.5em;
     text-align: center;
 }
+#completed {
+	background: rgba(0, 0, 0, 0.1);
+    color: #fff;
+    font-family: 'Open Sans', sas-serif;
+    font-size: 2em;
+    padding: 0.5em;
+    text-align: center;
+}
 .unit {
     background: linear-gradient(#aaa, #777);
     border-radius: 15px;
