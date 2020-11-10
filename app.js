@@ -15,14 +15,12 @@ var months = [
 ];
 var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-var start, stop, clock;
-
 // Grab the necessary elements from the DOM
-start = document.getElementById('start');
-stop = document.getElementById('stop');
-clock = document.getElementById('clock');
-tab = document.getElementById('tab');
-completed = document.getElementById('completed');
+var start = document.getElementById('start');
+var stop = document.getElementById('stop');
+var clock = document.getElementById('clock');
+var tab = document.getElementById('tab');
+var completed = document.getElementById('completed');
 
 // Add event listeners to both buttons
 start.addEventListener('click', function() {
@@ -52,8 +50,7 @@ function stopwatch(command) {
 	else if (rest) {
         minutes = 5;
     } else {
-        minutes = 0;
-		seconds = 10;
+        minutes = 25;
     }
 
 	function makeTwoDigits(number) {
